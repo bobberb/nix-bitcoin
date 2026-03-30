@@ -29,6 +29,7 @@
     ./joinmarket-ob-watcher.nix
     ./hardware-wallets.nix
     ./utxoracle.nix
+    ./bitcoin-tui.nix
 
     # Support features
     ./versioning.nix

@@ -297,6 +297,12 @@ def _():
     assert_matches("runuser -u operator -- utxoracle -h", "UTXOracle")
     # Verify the service user has RPC access
     succeed("runuser -u utxoracle -- ls /var/lib/bitcoind/.cookie")
+@test("bitcoin-tui")
+def _():
+    assert_running("bitcoind")
+    # bitcoin-tui is an interactive TUI, just verify the binary is installed
+    # and can show its version
+    assert_matches("runuser -u operator -- bitcoin-tui --version", "bitcoin-tui")
 
 @test("nodeinfo")
 def _():
